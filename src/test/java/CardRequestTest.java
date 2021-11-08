@@ -16,7 +16,7 @@ public class CardRequestTest {
     @BeforeAll
     static void setupAll() {
         //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\blackart\\Documents\\GoogleDriveQA\\Netology\\HW\\04.Auto\\2.1\\driver\\chromedriver.exe");
     }
 
     @BeforeEach
