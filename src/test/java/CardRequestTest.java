@@ -33,7 +33,7 @@ public class CardRequestTest {
     void sholdTestV1() {
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Артем Чернышов");
-        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+75555555555");
+        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+7555555555");
         driver.findElement(By.cssSelector("[class='checkbox__box']")).click();
         driver.findElement(By.cssSelector("button")).click();
         String actualMessage = driver.findElement(By.cssSelector("[data-test-id]")).getText().strip();
