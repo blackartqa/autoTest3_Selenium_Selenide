@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,5 +22,16 @@ public class CardRequestTest {
     }
 
     @Test
+    void sholdTestV1(){
+        driver.get("http://localhost:9999/");
+        driver.findElement().sendKeys("Артем");
+        driver.findElement().sendKeys("+75555555555");
+        driver.findElement().click();
+        driver.findElement().click();
+        String actualMessage = driver.findElement().getText();
+        String expectedMessage = "Ваша заявка успешно отправлена";
+        Assertions.assertEquals(expectedMessage, actualMessage, "Фактическое сообщение не соответствет ожмдаемому");
+
+    }
 
 }
