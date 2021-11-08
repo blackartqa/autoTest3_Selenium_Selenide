@@ -38,12 +38,14 @@ public class CardRequestTest {
     @Test
     void sholdTestV1() {
         driver.get("http://localhost:9999/");
-        List<WebElement> textFields = driver.findElements(By.className("input__control"));
-        textFields.get(0).sendKeys("Артем Чернышов");
-        textFields.get(1).sendKeys("+75555555555");
-        driver.findElement(By.className("checkbox__box")).click();
-        driver.findElement(By.tagName("button")).click();
-        String actualMessage = driver.findElement(By.className("paragraph_theme_alfa-on-white")).getText().strip();
+//        List<WebElement> textFields = driver.findElements(By.className("input__control"));
+//        textFields.get(0).sendKeys("Артем Чернышов");
+//        textFields.get(1).sendKeys("+75555555555");
+        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Артем Чернышов");
+        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+75555555555");
+        driver.findElement(By.cssSelector("[class='checkbox__box']")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String actualMessage = driver.findElement(By.cssSelector("[data-test-id]")).getText().strip();
         String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         Assertions.assertEquals(expectedMessage, actualMessage, "Фактическое сообщение не соответствет ожмдаемому");
 
