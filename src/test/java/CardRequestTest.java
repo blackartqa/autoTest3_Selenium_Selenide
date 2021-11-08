@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import static org.openqa.selenium.By.cssSelector;
+
 public class CardRequestTest {
     public WebDriver driver;
 
@@ -32,11 +34,11 @@ public class CardRequestTest {
     @Test
     void sholdTestV1() {
         driver.get("http://localhost:9999/");
-        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Артем Чернышов");
-        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+7555555555");
-        driver.findElement(By.cssSelector("[class='checkbox__box']")).click();
-        driver.findElement(By.cssSelector("button")).click();
-        String actualMessage = driver.findElement(By.cssSelector("[data-test-id]")).getText().strip();
+        driver.findElement(cssSelector("[type='text']")).sendKeys("Артем Чернышов");
+        driver.findElement(cssSelector("[type='tel']")).sendKeys("+75555555555");
+        driver.findElement(cssSelector("[class='checkbox__box']")).click();
+        driver.findElement(cssSelector("button")).click();
+        String actualMessage = driver.findElement(cssSelector("[data-test-id]")).getText().strip();
         String expectedMessage = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         Assertions.assertEquals(expectedMessage, actualMessage, "Фактическое сообщение не соответствет ожмдаемому");
 
