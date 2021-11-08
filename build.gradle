@@ -10,16 +10,22 @@ sourceCompatibility = 11
 // кодировка файлов (если используете русский язык в файлах)
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
+//compile "org.slf4j:slf4j-simple:1.6.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-    testImplementation 'com.codeborne:selenide:6.0.3'
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:4.3.1'
+    testImplementation 'io.github.bonigarcia:selenium-jupiter:3.4.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+//    testImplementation 'com.codeborne:selenide:6.0.3'
+//    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+//    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 
 }
 
